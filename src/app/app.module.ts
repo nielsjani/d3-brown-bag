@@ -7,6 +7,7 @@ import { D3BasicsComponent } from './d3-basics/d3-basics.component';
 import { PieChartComponent } from './pie-chart/pie-chart.component';
 import { BarChartComponent } from './bar-chart/bar-chart.component';
 import {BarChartScalingComponent} from './bar-chart-scaling/bar-chart-scaling.component';
+import { TransitionComponent } from './transition/transition.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import {BarChartScalingComponent} from './bar-chart-scaling/bar-chart-scaling.co
     D3BasicsComponent,
     PieChartComponent,
     BarChartComponent,
-    BarChartScalingComponent
+    BarChartScalingComponent,
+    TransitionComponent
   ],
   imports: [
     BrowserModule
