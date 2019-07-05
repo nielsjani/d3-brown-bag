@@ -58,6 +58,8 @@ export class BarChartScalingComponent implements OnInit {
       .attr('font-size', 10)
       .attr('x', (data, index) => index * (svgWidth / dataset.length) + (svgWidth / dataset.length - padding) / 2)
       .attr('y', data => this.getBarY(scaleLinear(data.score), this._svgHeight) - 10);
+
+    this.scaleColor();
   }
 
   private getBarX(svgWidth: number, dataset) {
@@ -68,4 +70,27 @@ export class BarChartScalingComponent implements OnInit {
     return svgHeight - scaledHeightOfBar;
   }
 
+  private scaleColor() {
+    const scaleLinear = d3.scaleLinear()
+      .domain([0, 10])
+      .range(['red', 'blue'] as any);
+
+    const dataset = [1, 3, 5, 7, 10];
+
+    const gForBars = d3.select('#scalingColors')
+      .append('svg')
+      .attr('width', 100)
+      .attr('height', 100)
+      .selectAll('rect')
+      .data(dataset)
+      .enter()
+      .append('rect')
+      .attr('width', 20)
+      .attr('height', 80)
+      .attr('x', (data, index) => index * 20)
+      .attr('y', 10)
+      .attr('fill', data =>  scaleLinear(data))
+    ;
+
+  }
 }
