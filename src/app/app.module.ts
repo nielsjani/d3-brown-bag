@@ -8,6 +8,7 @@ import { PieChartComponent } from './pie-chart/pie-chart.component';
 import { BarChartComponent } from './bar-chart/bar-chart.component';
 import {BarChartScalingComponent} from './bar-chart-scaling/bar-chart-scaling.component';
 import { TransitionComponent } from './transition/transition.component';
+import { DragAndDropComponent } from './drag-and-drop/drag-and-drop.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { TransitionComponent } from './transition/transition.component';
     PieChartComponent,
     BarChartComponent,
     BarChartScalingComponent,
-    TransitionComponent
+    TransitionComponent,
+    DragAndDropComponent
   ],
   imports: [
     BrowserModule
